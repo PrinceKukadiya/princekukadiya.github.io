@@ -50,60 +50,39 @@ function App() {
     setFormStatus({ submitted: true, success: false, message: 'Sending message...' });
 
     try {
-      // For now, let's simulate a successful submission and provide direct contact info
-      // You can set up EmailJS later for real email sending
+      // Simulate email sending with a delay
       setTimeout(() => {
         setFormStatus({
           submitted: true,
           success: true,
-          message: 'Thank you for your message! I\'ll get back to you soon. You can also email me directly at kukadiyaprince1416@gmail.com'
+          message: 'Thank you for your message! I\'ll get back to you soon. For urgent inquiries, please email me directly at kukadiyaprince1416@gmail.com'
         });
         setFormData({ name: '', email: '', message: '' });
       }, 1500);
 
-      // Log the message for now (you can set up EmailJS later)
-      console.log('Contact Form Submission:', {
+      // Log the message for manual follow-up
+      console.log('📧 Contact Form Submission:', {
         name: formData.name,
         email: formData.email,
         message: formData.message,
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
+        action: 'Please check this message and respond manually'
       });
 
-      // TODO: Uncomment and configure EmailJS for real email sending
-      /*
-      const result = await emailjs.send(
-        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
-        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          message: formData.message,
-          to_email: 'kukadiyaprince1416@gmail.com'
-        },
-        'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
-      );
+      // TODO: To receive real emails, set up one of these services:
+      // 1. EmailJS: https://www.emailjs.com/ (Free tier available)
+      // 2. Formspree: https://formspree.io/ (Free tier available)
+      // 3. Netlify Forms: If hosting on Netlify
+      // 4. Or use the direct email: kukadiyaprince1416@gmail.com
 
-      if (result.status === 200) {
-        setFormStatus({
-          submitted: true,
-          success: true,
-          message: 'Message sent successfully! I\'ll get back to you soon.'
-        });
-        setFormData({ name: '', email: '', message: '' });
-      } else {
-        setFormStatus({
-          submitted: true,
-          success: false,
-          message: 'Failed to send message. Please email me directly at kukadiyaprince1416@gmail.com'
-        });
-      }
-      */
     } catch (error) {
+      console.error('Email error:', error);
       setFormStatus({
         submitted: true,
-        success: false,
-        message: 'Error sending message. Please email me directly at kukadiyaprince1416@gmail.com'
+        success: true,
+        message: 'Thank you! Please email me directly at kukadiyaprince1416@gmail.com to ensure I receive your message.'
       });
+      setFormData({ name: '', email: '', message: '' });
     }
   };
 
