@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import emailjs from '@emailjs/browser';
 import './App.css';
 
 function App() {
@@ -20,6 +21,9 @@ function App() {
     setTimeout(() => {
       setIsLoading(false);
     }, 2000);
+    
+    // Initialize EmailJS
+    emailjs.init("YOUR_PUBLIC_KEY"); // You'll need to replace this with your actual EmailJS public key
   }, []);
 
   const scrollToSection = (sectionId) => {
@@ -45,23 +49,62 @@ function App() {
     e.preventDefault();
     setFormStatus({ submitted: true, success: false, message: 'Sending message...' });
 
-    // For now, let's simulate a successful submission and provide direct contact info
-    setTimeout(() => {
+    try {
+      // For now, let's simulate a successful submission and provide direct contact info
+      // You can set up EmailJS later for real email sending
+      setTimeout(() => {
+        setFormStatus({
+          submitted: true,
+          success: true,
+          message: 'Thank you for your message! I\'ll get back to you soon. You can also email me directly at kukadiyaprince1416@gmail.com'
+        });
+        setFormData({ name: '', email: '', message: '' });
+      }, 1500);
+
+      // Log the message for now (you can set up EmailJS later)
+      console.log('Contact Form Submission:', {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+        timestamp: new Date().toISOString()
+      });
+
+      // TODO: Uncomment and configure EmailJS for real email sending
+      /*
+      const result = await emailjs.send(
+        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
+        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_email: 'kukadiyaprince1416@gmail.com'
+        },
+        'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
+      );
+
+      if (result.status === 200) {
+        setFormStatus({
+          submitted: true,
+          success: true,
+          message: 'Message sent successfully! I\'ll get back to you soon.'
+        });
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        setFormStatus({
+          submitted: true,
+          success: false,
+          message: 'Failed to send message. Please email me directly at kukadiyaprince1416@gmail.com'
+        });
+      }
+      */
+    } catch (error) {
       setFormStatus({
         submitted: true,
-        success: true,
-        message: 'Thank you for your message! Please email me directly at kukadiyaprince1416@gmail.com for a faster response.'
+        success: false,
+        message: 'Error sending message. Please email me directly at kukadiyaprince1416@gmail.com'
       });
-      setFormData({ name: '', email: '', message: '' });
-    }, 1500);
-
-    // You can also log the message to console for testing
-    console.log('Contact Form Submission:', {
-      name: formData.name,
-      email: formData.email,
-      message: formData.message,
-      timestamp: new Date().toISOString()
-    });
+    }
   };
 
   if (isLoading) {
