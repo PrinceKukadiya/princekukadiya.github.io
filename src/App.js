@@ -4,6 +4,16 @@ import './App.css';
 function App() {
   const [activeSection, setActiveSection] = useState('home');
   const [isLoading, setIsLoading] = useState(true);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [formStatus, setFormStatus] = useState({
+    submitted: false,
+    success: false,
+    message: ''
+  });
 
   useEffect(() => {
     // Simulate loading time
@@ -22,6 +32,49 @@ function App() {
 
   const openVideo = (url) => {
     window.open(url, '_blank');
+  };
+
+  const handleFormChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    setFormStatus({ submitted: true, success: false, message: 'Sending message...' });
+
+    try {
+      const response = await fetch('https://formspree.io/f/xpzgwqgw', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setFormStatus({
+          submitted: true,
+          success: true,
+          message: 'Message sent successfully! I\'ll get back to you soon.'
+        });
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        setFormStatus({
+          submitted: true,
+          success: false,
+          message: 'Failed to send message. Please try again.'
+        });
+      }
+    } catch (error) {
+      setFormStatus({
+        submitted: true,
+        success: false,
+        message: 'Error sending message. Please try again.'
+      });
+    }
   };
 
   if (isLoading) {
@@ -606,17 +659,52 @@ function App() {
               </div>
             </div>
             <div className="contact-form">
-              <form>
+              {formStatus.submitted && (
+                <div className={`form-message ${formStatus.success ? 'success' : 'error'}`}>
+                  {formStatus.message}
+                </div>
+              )}
+              <form onSubmit={handleFormSubmit}>
                 <div className="form-group">
-                  <input type="text" placeholder="Your Name" className="form-input" />
+                  <input 
+                    type="text" 
+                    name="name"
+                    placeholder="Your Name" 
+                    className="form-input" 
+                    value={formData.name}
+                    onChange={handleFormChange}
+                    required
+                  />
                 </div>
                 <div className="form-group">
-                  <input type="email" placeholder="Your Email" className="form-input" />
+                  <input 
+                    type="email" 
+                    name="email"
+                    placeholder="Your Email" 
+                    className="form-input" 
+                    value={formData.email}
+                    onChange={handleFormChange}
+                    required
+                  />
                 </div>
                 <div className="form-group">
-                  <textarea placeholder="Your Message" className="form-textarea" rows="5"></textarea>
+                  <textarea 
+                    name="message"
+                    placeholder="Your Message" 
+                    className="form-textarea" 
+                    rows="5"
+                    value={formData.message}
+                    onChange={handleFormChange}
+                    required
+                  ></textarea>
                 </div>
-                <button type="submit" className="btn btn-primary">Send Message</button>
+                <button 
+                  type="submit" 
+                  className="btn btn-primary"
+                  disabled={formStatus.submitted && !formStatus.success}
+                >
+                  {formStatus.submitted && !formStatus.success ? 'Sending...' : 'Send Message'}
+                </button>
               </form>
             </div>
           </div>
