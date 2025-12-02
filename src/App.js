@@ -343,7 +343,103 @@ function App() {
                   </div>
                   <div className="project-links">
                     <button 
-                      onClick={() => openVideo('https://drive.google.com/file/d/17-bHsmK-hatxTRCJkWwgOZl07vqaqMP7/view?usp=sharing')}
+                      onClick={() => openVideo('https://drive.google.com/file/d/1Z4AoJVzHCILDX0k4ftMHb2zk_O75v7CP/view?usp=sharing')}
+                      className="btn btn-small"
+                    >
+                      Watch Demo
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div className="project-card">
+                <div className="project-image">
+                  <div className="project-placeholder">🎰</div>
+                </div>
+                <div className="project-content">
+                  <h3>BoomWin Slot</h3>
+                  <p>Engaging slot game with exciting bonus features, free spins, and multiple paylines. Features stunning visuals and smooth gameplay mechanics.</p>
+                  <div className="project-tech">
+                    <span className="tech-tag">Unity</span>
+                    <span className="tech-tag">C#</span>
+                    <span className="tech-tag">Slot Game</span>
+                    <span className="tech-tag">Casino</span>
+                  </div>
+                  <div className="project-links">
+                    <button 
+                      onClick={() => openVideo('https://drive.google.com/file/d/1sOY35o4sev181V3CZWi18NDlMYLaaVWM/view?usp=sharing')}
+                      className="btn btn-small"
+                    >
+                      Watch Demo
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div className="project-card">
+                <div className="project-image">
+                  <div className="project-placeholder">🎰</div>
+                </div>
+                <div className="project-content">
+                  <h3>Cascade Slot</h3>
+                  <p>Innovative cascade slot game with cascading reels mechanics. Features unique gameplay where winning symbols disappear and new ones fall into place.</p>
+                  <div className="project-tech">
+                    <span className="tech-tag">Unity</span>
+                    <span className="tech-tag">C#</span>
+                    <span className="tech-tag">Slot Game</span>
+                    <span className="tech-tag">Casino</span>
+                  </div>
+                  <div className="project-links">
+                    <button 
+                      onClick={() => openVideo('https://drive.google.com/file/d/1nYnl3cUZ5wzDZFrtn0ZfoJ1Xmh7mcNrx/view?usp=sharing')}
+                      className="btn btn-small"
+                    >
+                      Watch Demo
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div className="project-card">
+                <div className="project-image">
+                  <div className="project-placeholder">🎰</div>
+                </div>
+                <div className="project-content">
+                  <h3>CosmoSlot</h3>
+                  <p>Space-themed slot game with cosmic visuals and stellar bonus rounds. Features progressive jackpots and immersive space adventure gameplay.</p>
+                  <div className="project-tech">
+                    <span className="tech-tag">Unity</span>
+                    <span className="tech-tag">C#</span>
+                    <span className="tech-tag">Slot Game</span>
+                    <span className="tech-tag">Casino</span>
+                  </div>
+                  <div className="project-links">
+                    <button 
+                      onClick={() => openVideo('https://drive.google.com/file/d/1iqEgkVkLzwxD-OeaoH5mWKIGNR4nQAmj/view?usp=sharing')}
+                      className="btn btn-small"
+                    >
+                      Watch Demo
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div className="project-card">
+                <div className="project-image">
+                  <div className="project-placeholder">🎰</div>
+                </div>
+                <div className="project-content">
+                  <h3>Raptor-Firelink Slot</h3>
+                  <p>Action-packed slot game with fire-themed visuals and exciting bonus features. Features multiple paylines and engaging gameplay mechanics.</p>
+                  <div className="project-tech">
+                    <span className="tech-tag">Unity</span>
+                    <span className="tech-tag">C#</span>
+                    <span className="tech-tag">Slot Game</span>
+                    <span className="tech-tag">Casino</span>
+                  </div>
+                  <div className="project-links">
+                    <button 
+                      onClick={() => openVideo('https://drive.google.com/file/d/1D15NETrZPhJQb9q0PW3nqXMvmXL2GqSd/view?usp=sharing')}
                       className="btn btn-small"
                     >
                       Watch Demo
