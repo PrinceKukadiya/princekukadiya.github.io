@@ -520,8 +520,8 @@ function App() {
                     <span className="tech-tag">3D Models</span>
                   </div>
                   <div className="project-links">
-                    <button 
-                      onClick={() => openVideo('https://drive.google.com/file/d/17-bHsmK-hatxTRCJkWwgOZl07vqaqMP7/view?usp=sharing')}
+                    <button
+                      onClick={() => openVideo('https://drive.google.com/file/d/1Z4AoJVzHCILDX0k4ftMHb2zk_O75v7CP/view?usp=sharing')}
                       className="btn btn-small"
                     >
                       Watch Demo
@@ -544,8 +544,8 @@ function App() {
                     <span className="tech-tag">Spatial Mapping</span>
                   </div>
                   <div className="project-links">
-                    <button 
-                      onClick={() => openVideo('https://drive.google.com/file/d/17-bHsmK-hatxTRCJkWwgOZl07vqaqMP7/view?usp=sharing')}
+                    <button
+                      onClick={() => openVideo('https://drive.google.com/file/d/1sOY35o4sev181V3CZWi18NDlMYLaaVWM/view?usp=sharing')}
                       className="btn btn-small"
                     >
                       Watch Demo
@@ -576,8 +576,8 @@ function App() {
                     >
                       Google Play
                     </a>
-                    <button 
-                      onClick={() => openVideo('https://drive.google.com/file/d/17-bHsmK-hatxTRCJkWwgOZl07vqaqMP7/view?usp=sharing')}
+                    <button
+                      onClick={() => openVideo('https://drive.google.com/file/d/1nYnl3cUZ5wzDZFrtn0ZfoJ1Xmh7mcNrx/view?usp=sharing')}
                       className="btn btn-small"
                     >
                       Watch Demo
@@ -666,8 +666,8 @@ function App() {
                     >
                       Google Play
                     </a>
-                    <button 
-                      onClick={() => openVideo('https://drive.google.com/file/d/17-bHsmK-hatxTRCJkWwgOZl07vqaqMP7/view?usp=sharing')}
+                    <button
+                      onClick={() => openVideo('https://drive.google.com/file/d/1iqEgkVkLzwxD-OeaoH5mWKIGNR4nQAmj/view?usp=sharing')}
                       className="btn btn-small"
                     >
                       Watch Demo
