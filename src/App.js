@@ -521,7 +521,7 @@ function App() {
                   </div>
                   <div className="project-links">
                     <button
-                      onClick={() => openVideo('https://drive.google.com/file/d/1Z4AoJVzHCILDX0k4ftMHb2zk_O75v7CP/view?usp=sharing')}
+                      onClick={() => openVideo('https://drive.google.com/file/d/1M2BsYrwg0PQPmNnoMKQTB8_jq75cwDEg/view?usp=sharing')}
                       className="btn btn-small"
                     >
                       Watch Demo
@@ -545,7 +545,7 @@ function App() {
                   </div>
                   <div className="project-links">
                     <button
-                      onClick={() => openVideo('https://drive.google.com/file/d/1sOY35o4sev181V3CZWi18NDlMYLaaVWM/view?usp=sharing')}
+                      onClick={() => openVideo('https://drive.google.com/file/d/1L3UkiBZeOtSqr5D5v5k8SbwIBwPfIlep/view?usp=drive_link')}
                       className="btn btn-small"
                     >
                       Watch Demo
@@ -577,7 +577,7 @@ function App() {
                       Google Play
                     </a>
                     <button
-                      onClick={() => openVideo('https://drive.google.com/file/d/1nYnl3cUZ5wzDZFrtn0ZfoJ1Xmh7mcNrx/view?usp=sharing')}
+                      onClick={() => openVideo('https://drive.google.com/file/d/1gIA6tlCWc23hiipPpRkxKCOIlXIze5R8/view?usp=drive_link')}
                       className="btn btn-small"
                     >
                       Watch Demo
