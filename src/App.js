@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import './App.css';
 
-const RESUME_URL = `${process.env.PUBLIC_URL}/resume/Prince_Kukadiya_Unity_iOS_Developer.pdf`;
+const RESUME_URL = `${process.env.PUBLIC_URL}/resume.pdf`;
 
 const img = (file) => `${process.env.PUBLIC_URL}/images/projects/${file}`;
 
@@ -395,7 +395,7 @@ function App() {
               </li>
             ))}
           </ul>
-          <a className="btn btn-small nav-resume" href={RESUME_URL} download>
+          <a className="btn btn-small nav-resume" href={RESUME_URL} download="Prince_Kukadiya_Resume.pdf">
             Resume
           </a>
         </div>
@@ -417,7 +417,7 @@ function App() {
             <button className="btn btn-primary" onClick={() => scrollToSection('projects')}>
               View My Work
             </button>
-            <a className="btn btn-secondary" href={RESUME_URL} download>
+            <a className="btn btn-secondary" href={RESUME_URL} download="Prince_Kukadiya_Resume.pdf">
               Download Resume
             </a>
             <button className="btn btn-ghost" onClick={() => scrollToSection('contact')}>
@@ -628,7 +628,7 @@ function App() {
                 <li><button onClick={() => scrollToSection('about')}>About</button></li>
                 <li><button onClick={() => scrollToSection('experience')}>Experience</button></li>
                 <li><button onClick={() => scrollToSection('projects')}>Projects</button></li>
-                <li><a href={RESUME_URL} download>Resume</a></li>
+                <li><a href={RESUME_URL} download="Prince_Kukadiya_Resume.pdf">Resume</a></li>
               </ul>
             </div>
             <div className="footer-section">
